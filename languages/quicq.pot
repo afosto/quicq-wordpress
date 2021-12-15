@@ -1,0 +1,114 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Quicq for WebP images\n"
+"POT-Creation-Date: 2021-12-11 12:17+0100\n"
+"PO-Revision-Date: 2021-12-11 12:17+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: quicq.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#. Author of the plugin/theme
+#: quicq.php:53 quicq.php:54
+msgid "Quicq"
+msgstr ""
+
+#: quicq.php:408
+msgid "Boost your website"
+msgstr ""
+
+#: quicq.php:409
+msgid "Optimize smart and easy your images for your website."
+msgstr ""
+
+#: quicq.php:421
+msgid "Join Quicq"
+msgstr ""
+
+#: quicq.php:422
+msgid "Create you free account"
+msgstr ""
+
+#: quicq.php:425
+msgid "Sign up"
+msgstr ""
+
+#: quicq.php:426
+msgid "Log in"
+msgstr ""
+
+#: quicq.php:441
+msgid "About Quicq"
+msgstr ""
+
+#: quicq.php:442
+msgid ""
+"Speed ​​up the loading time of your website or webshop up to 80% with Quicq. "
+"Your visitors stay longer on your website and rank better in search engines."
+msgstr ""
+
+#: quicq.php:452
+msgid "How can i install Quicq?"
+msgstr ""
+
+#: quicq.php:453
+msgid "Go to docs"
+msgstr ""
+
+#: quicq.php:460
+msgid "Contribution"
+msgstr ""
+
+#: quicq.php:461
+msgid "This plugin was made in collaboration with"
+msgstr ""
+
+#: quicq.php:461
+msgid "Kyano.app"
+msgstr ""
+
+#: quicq.php:476
+msgid "URL Key:"
+msgstr ""
+
+#: quicq.php:477
+msgid "Example:"
+msgstr ""
+
+#: quicq.php:477
+msgid "quicq"
+msgstr ""
+
+#: quicq.php:504
+msgid "Enable Quicq"
+msgstr ""
+
+#: quicq.php:505
+msgid "Activate quicq in your website."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Quicq for WebP images"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://quicq.io/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Quicq integration for Wordpress."
+msgstr ""
