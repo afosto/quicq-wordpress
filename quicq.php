@@ -54,7 +54,7 @@ function quicq_init_page() {
     'manage_options',
     'quicq_adminpage',
     'quicq_adminpage',
-    plugins_url('quicq/images/quicqicon.png'),
+    plugins_url(dirname(__FILE__) .'/images/quicqicon.png'),
     6
   );
 }
