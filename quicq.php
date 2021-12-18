@@ -48,17 +48,18 @@ function quicq_load_textdomain() {
  * @since 1.0
  */
 function quicq_init_page() {
+  $plugin_url = plugin_dir_url(__FILE__);
+  $imageurl = $plugin_url.'images/quicqicon.png';
   add_menu_page(
     __('Quicq', 'quicq'),
     __('Quicq', 'quicq'),
     'manage_options',
     'quicq_adminpage',
     'quicq_adminpage',
-    plugins_url(dirname(__FILE__) .'/images/quicqicon.png'),
+    $imageurl,
     6
   );
 }
-
 
 /**
  * Adds quicq settings
