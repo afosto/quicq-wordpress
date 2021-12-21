@@ -25,12 +25,12 @@ add_action('init', 'quicq_load_textdomain', 1);
 add_action('admin_head', 'plugin_style_quicq');
 add_action('admin_menu', 'quicq_init_page');
 add_action('admin_init', 'add_settings_quicq');
-
+add_action('admin_enqueue_scripts', 'quicq_add_styles',0);
 
 
 /**
  * Multilanguage function
- * @since 1.0
+ * @since 1.0.0
  */
 
 function quicq_load_textdomain() {
@@ -40,6 +40,24 @@ function quicq_load_textdomain() {
 
   load_theme_textdomain('quicq', dirname(__FILE__) . '/languages');
 }
+
+	/**
+	 * Adds styles
+	 * @since 1.0.0
+	 */
+
+	function quicq_add_styles() {
+    $plugin_url = plugin_dir_url(__FILE__);
+
+			wp_register_style('quicq-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+			wp_enqueue_style('quicq-bootstrap');
+
+      wp_register_style('quicq-styles', $plugin_url.'assets/css/styles-quicq.css');
+			wp_enqueue_style('quicq-styles');
+
+
+	}
+
 
 
 
@@ -79,7 +97,7 @@ function add_settings_quicq() {
  */
 function quicq_adminpage() {
   if (isset($_POST['quicq_key']) && $_POST['quicq_key'] != '') {
-    $quicq_url = 'https://cdn.quicq.io/' . $_POST['quicq_key'];
+    $quicq_url = 'https://cdn.quicq.io/' . esc_html($_POST['quicq_key']);
     update_option('upload_url_path', $quicq_url);
     update_option('quicq_key', $quicq_url);
   }
@@ -88,317 +106,11 @@ function quicq_adminpage() {
     update_option('quicq_enabled', 0);
     update_option('upload_url_path', '');
   } else {
-    update_option('quicq_enabled', $_POST['quicq_enabled']);
+    update_option('quicq_enabled', esc_html($_POST['quicq_enabled']));
     update_option('upload_url_path', get_option('quicq_key'));
   }
 
 ?>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  <style id="quicq-admin-page-styles">
-    section.quicq-admin.quicq-admin-tab.wrap {
-      min-height: 100vh;
-    }
-
-    section.quicq-admin.quicq-admin-tab.wrap form {
-      padding: 10px;
-      background-color: #fff;
-      border-radius: 3px;
-    }
-
-    .quicq-h5 {
-      font-weight: bold;
-    }
-
-    .quicq-text-meta {
-      color: gray;
-    }
-
-    .quicq-grid {
-      display: flex;
-      padding-bottom: 15px;
-    }
-
-    .quicq-first-column {
-      margin-right: 20px;
-    }
-
-    .quicq-container-small {
-      width: 1000px;
-      max-width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto
-    }
-
-    .quicq-admin {
-      background: #fff;
-    }
-
-    input.quicq-btn.btn-block,
-    .btn-block {
-      display: block;
-      width: 100%;
-    }
-
-    input.quicq-btn {
-      padding: 5px 0px !important
-    }
-
-    .quicq-btn {
-      display: inline-block !important;
-      font-weight: 700 !important;
-      color: #324554 !important;
-      text-align: center;
-      vertical-align: middle;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border-top-color: transparent;
-      border-right-color: transparent;
-      border-bottom-color: transparent;
-      border-left-color: transparent;
-      padding: 10px 15px !important;
-      font-size: 14px !important;
-      border-radius: 4px;
-      text-decoration: none !important;
-      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    }
-
-    .quicq-btn-primary,
-    input.quicq-btn-primary {
-      color: #fff !important;
-      background-color: #005eff !important;
-      border-color: #005eff !important;
-    }
-
-    .quicq-btn-primary:hover,
-    input.quicq-btn-primary:hover {
-      color: #fff !important;
-      background-color: #0050d9 !important;
-      border-color: #004bcc !important;
-    }
-
-
-    .quicq-card {
-      background: #f5f5f9;
-      padding: 20px;
-      display: block;
-      justify-content: space-between;
-      position: relative;
-      border-radius: 3px;
-    }
-
-    .w-300 {
-      max-width: 100%;
-      width: 200px;
-    }
-
-
-    .quicq-h4 {
-      margin: 0px 0px 10px;
-      font-size: 25px;
-      color: #000;
-    }
-
-    .uicq-text-meta {
-      font-weight: 400 !important
-    }
-
-
-
-    h1.quicq-h3 {
-      margin-bottom: 0px;
-      font-weight: 500;
-    }
-
-    p.submit {
-      padding: 0px !important;
-      margin: 0px !important
-    }
-
-    input[type="text"] {
-      width: 100%;
-      border-radius: 3px;
-      height: 40px;
-      border: 1px solid #d0d0d0;
-    }
-  </style>
-
-  <style>
-    @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-
-      input[type='checkbox'],
-      input[type='radio'] {
-        --active: #275efe;
-        --active-inner: #fff;
-        --focus: 2px rgba(39, 94, 254, .3);
-        --border: #bbc1e1;
-        --border-hover: #275efe;
-        --background: #fff;
-        --disabled: #f6f8ff;
-        --disabled-inner: #e1e6f9;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        height: 21px;
-        outline: none;
-        display: inline-block;
-        vertical-align: top;
-        position: relative;
-        margin: 0;
-        cursor: pointer;
-        border: 1px solid var(--bc, var(--border));
-        background: var(--b, var(--background));
-        transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
-      }
-
-      input[type='checkbox']:after,
-      input[type='radio']:after {
-        content: '';
-        display: block;
-        left: 0;
-        top: 0;
-        position: absolute;
-        transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
-      }
-
-      input[type='checkbox']:checked,
-      input[type='radio']:checked {
-        --b: var(--active);
-        --bc: var(--active);
-        --d-o: 0.3s;
-        --d-t: 0.6s;
-        --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
-      }
-
-      input[type='checkbox']:disabled,
-      input[type='radio']:disabled {
-        --b: var(--disabled);
-        cursor: not-allowed;
-        opacity: 0.9;
-      }
-
-      input[type='checkbox']:disabled:checked,
-      input[type='radio']:disabled:checked {
-        --b: var(--disabled-inner);
-        --bc: var(--border);
-      }
-
-      input[type='checkbox']:disabled+label,
-      input[type='radio']:disabled+label {
-        cursor: not-allowed;
-      }
-
-      input[type='checkbox']:hover:not(:checked):not(:disabled),
-      input[type='radio']:hover:not(:checked):not(:disabled) {
-        --bc: var(--border-hover);
-      }
-
-      input[type='checkbox']:focus,
-      input[type='radio']:focus {
-        box-shadow: 0 0 0 var(--focus);
-      }
-
-      input[type='checkbox']:not(.switch),
-      input[type='radio']:not(.switch) {
-        width: 21px;
-      }
-
-      input[type='checkbox']:not(.switch):after,
-      input[type='radio']:not(.switch):after {
-        opacity: var(--o, 0);
-      }
-
-      input[type='checkbox']:not(.switch):checked,
-      input[type='radio']:not(.switch):checked {
-        --o: 1;
-      }
-
-      input[type='checkbox']+label,
-      input[type='radio']+label {
-        font-size: 14px;
-        line-height: 21px;
-        display: inline-block;
-        vertical-align: top;
-        cursor: pointer;
-        margin-left: 4px;
-      }
-
-      input[type='checkbox']:not(.switch) {
-        border-radius: 7px;
-      }
-
-      input[type='checkbox']:not(.switch):after {
-        width: 5px;
-        height: 9px;
-        border: 2px solid var(--active-inner);
-        border-top: 0;
-        border-left: 0;
-        left: 7px;
-        top: 4px;
-        transform: rotate(var(--r, 20deg));
-      }
-
-      input[type='checkbox']:not(.switch):checked {
-        --r: 43deg;
-      }
-
-      input[type='checkbox'].switch {
-        width: 38px;
-        border-radius: 11px;
-      }
-
-      input[type='checkbox'].switch:after {
-        left: 2px;
-        top: 2px;
-        border-radius: 50%;
-        width: 15px;
-        height: 15px;
-        background: var(--ab, var(--border));
-        transform: translateX(var(--x, 0));
-      }
-
-      input[type='checkbox'].switch:checked {
-        --ab: var(--active-inner);
-        --x: 17px;
-      }
-
-      input[type='checkbox'].switch:disabled:not(:checked):after {
-        opacity: 0.6;
-      }
-
-      input[type='radio'] {
-        border-radius: 50%;
-      }
-
-      input[type='radio']:after {
-        width: 19px;
-        height: 19px;
-        border-radius: 50%;
-        background: var(--active-inner);
-        opacity: 0;
-        transform: scale(var(--s, 0.7));
-      }
-
-      input[type='radio']:checked {
-        --s: 0.5;
-      }
-    }
-
-    .quicq-card-body {
-      background: #fff;
-    }
-    .doc-icon-20 svg{
-      width: 20px;
-    }
-
-    .text-primary{
-      color: #005eff;
-    }
-  </style>
 
   <section class="quicq-admin quicq-admin-tab wrap">
     <div class="quicq-container-small">
