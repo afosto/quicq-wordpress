@@ -17,7 +17,6 @@ Are you desperately looking for ways to increase your websites loading time? Loo
 
 **Website visitors **
 
-
 * Faster loading times
 * Lower hosting costs
 * Optimized images for every device
@@ -27,7 +26,6 @@ Are you desperately looking for ways to increase your websites loading time? Loo
 
 **Marketeers**
 
-
 * Image cropping using the url which allows you to put product feeds to instagram and facebook in the right sizes
 * Add watermarks to images
 * Blur images through the url
@@ -35,7 +33,6 @@ Are you desperately looking for ways to increase your websites loading time? Loo
 * Cropping the image by means of the url
 
 **Developers**
-
 
 * Upload images once (source) and always have all formats available and be flexible with changes (on the fly)
 * Upload images once and all file types are always available (jpg, png, webp)
@@ -53,26 +50,6 @@ Are you desperately looking for ways to increase your websites loading time? Loo
 - Beautiful presentations for you and your customers
 - Premium partner support
 
-
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
-
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
-
-A few notes about the sections above:
-
-* "Contributors" is a comma separated list of wordpress.org usernames
-* "Tags" is a comma separated list of tags that apply to the plugin
-* "Requires at least" is the lowest version that the plugin will work on
-* "Tested up to" is the highest version that you've *successfully used to test the plugin*
-* Stable tag must indicate the Subversion "tag" of the latest stable version
-
-Note that the `readme.txt` value of stable tag is the one that is the defining one for the plugin.  If the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used for displaying information about the plugin.
-
-If you develop in trunk, you can update the trunk `readme.txt` to reflect changes in your in-development version, without having that information incorrectly disclosed about the current stable version that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-If no stable tag is provided, your users may not get the correct version of your code.
-
 **ABOUT AFOSTO**
 
 Afosto is a software company from The Netherlands. We aim to help our customers grow in a healthy, efficient and fun way by optimizing business processes with smart software solutions.
@@ -80,6 +57,20 @@ Afosto is a software company from The Netherlands. We aim to help our customers 
 We develop microservices and software products based on the needs of our customer base. Want to know more about who we are and what we do? Find out more on our website:
 
 [https://afosto.com](https://afosto.com)
+
+**SUPPORT**
+
+Are you stuck in setting up Quicq for your website? We provide free one-on-one support! Just send an email to support at afosto.com and we will help you with setting up Quicq.
+Do you have feature requests or ideas on how to make Quicq even better? Please let us know! We love feedback and are constantly looking to improve our services.
+Found a bug please report the issue through [Github](https://github.com/afosto/quicq-wordpress), and we will fix it ASAP. 
+
+**PRIVACY**
+
+The Quicq plugin uses the CDN from [Quicq](https://afosto.com/apps/quicq/) to serve your images to your website visitors. Quicq does not interact with the visitors of the website.
+
+The images from your web are sent to our servers so we can compress and optimize them. his includes the transfer of EXIF data. The EXIF data will either be stripped or returned as it is. It is not stored on the Quicq servers.
+
+You will find the terms of use of Quicq on our [website](https://afosto.com/apps/quicq/terms-of-use/)
 
 **CREDITS**
 
