@@ -49,7 +49,7 @@ function quicq_load_textdomain() {
 function quicq_add_styles() {
 	$plugin_url = plugin_dir_url( __FILE__ );
 
-	wp_register_style( 'quicq-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' );
+	wp_register_style( 'quicq-bootstrap', $plugin_url . 'assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'quicq-bootstrap' );
 
 	wp_register_style( 'quicq-styles', $plugin_url . 'assets/css/styles-quicq.css' );
@@ -90,21 +90,25 @@ function add_settings_quicq() {
  * @since 1.0
  */
 function quicq_adminpage() {
-	if ( isset( $_POST['quicq_key'] ) && $_POST['quicq_key'] != '' ) {
-		$quicqKey  = sanitize_key( wp_unslash( $_POST['quicq_key'] ) );
-		$quicq_url = 'https://cdn.quicq.io/' . $quicqKey;
-		update_option( 'upload_url_path', $quicq_url );
-		update_option( 'quicq_key', $quicq_url );
+
+	if ( current_user_can( 'manage_options' ) ) {
+		if ( isset( $_POST['quicq_key'] ) && $_POST['quicq_key'] != '' ) {
+			$quicqKey  = sanitize_key( wp_unslash( $_POST['quicq_key'] ) );
+			$quicq_url = 'https://cdn.quicq.io/' . $quicqKey;
+			update_option( 'upload_url_path', $quicq_url );
+			update_option( 'quicq_key', $quicq_url );
+		}
+
+		if ( ! isset( $_POST['quicq_enabled'] ) ) {
+			update_option( 'quicq_enabled', 0 );
+			update_option( 'upload_url_path', '' );
+		} else {
+			$isEnabled = filter_input( INPUT_POST, 'quicq_enabled', FILTER_SANITIZE_NUMBER_INT );
+			update_option( 'quicq_enabled', $isEnabled );
+			update_option( 'upload_url_path', get_option( 'quicq_key' ) );
+		}
 	}
 
-	if ( ! isset( $_POST['quicq_enabled'] ) ) {
-		update_option( 'quicq_enabled', 0 );
-		update_option( 'upload_url_path', '' );
-	} else {
-		$isEnabled = filter_input( INPUT_POST, 'quicq_enabled', FILTER_SANITIZE_NUMBER_INT );
-		update_option( 'quicq_enabled', $isEnabled );
-		update_option( 'upload_url_path', get_option( 'quicq_key' ) );
-	}
 
 	?>
 
