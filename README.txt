@@ -12,7 +12,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Optimize images, reduce loading time and increase SEO scores and conversion with Quicq. The #1 image optimization tool.
 
 == Description ==
-Are you desperately looking for ways to increase your websites loading time? Look nu further! Quicq will serve all images on your website in the smallest possible size for all your current and future images automatically.
+Are you desperately looking for ways to increase your websites loading time? Stop searching! Quicq will serve all images on your website in the smallest possible size for all your current and future images automatically.
 
 **Quicq Benefits**
 
