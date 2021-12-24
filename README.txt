@@ -1,4 +1,5 @@
 === Quicq | #1 in Image Optimization & Compression | Improve your Google Pagespeed ===
+Plugin Name: Quicq | #1 in Image Optimization & Compression | Improve your Google Pagespeed
 Contributors: kyanoapp
 Tags: images, optimize, resize, webp, convert, jpeg2000, optimize images, convert webp, lazy load, resize images, compress images, webp, performance, optimization, photography, optimizer, image optimizer, image compress, image optimize, webp format
 Requires at least: 5.3
