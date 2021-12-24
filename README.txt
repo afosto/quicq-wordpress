@@ -15,7 +15,7 @@ Are you desperately looking for ways to increase your websites loading time? Loo
 
 **Quicq Benefits**
 
-**Website visitors **
+**Website visitors**
 
 * Faster loading times
 * Lower hosting costs
