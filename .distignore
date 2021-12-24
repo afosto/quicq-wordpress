@@ -1,0 +1,4 @@
+.gitignore
+.distignore
+/.git
+/.github
