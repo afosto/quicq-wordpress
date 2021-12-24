@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name:    Quicq for WebP images
- * Plugin URI:    https://quicq.io/
+ * Plugin URI:     https://quicq.io/
  * Description:    Quicq integration for Wordpress.
  * Version:        1.0
- * Author:        Quicq
- * Author URI:    https://quicq.io/
- * Domain Path: /languages
- * License:        GPL-2.0+
- * License URI:    http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:    quicq
+ * Author:        Afosto
+ * Author URI:    https://afosto.com
+ * Domain Path:   /languages
+ * License:       GPL-2.0+
+ * License URI:   http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:   quicq
  */
 
 // If this file is called directly, abort.
