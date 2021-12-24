@@ -1,4 +1,5 @@
-=== Quicq ===
+=== Quicq | #1 in Image Optimization & Compression | Improve your Google Pagespeed ===
+Plugin Name: Quicq | #1 in Image Optimization & Compression | Improve your Google Pagespeed
 Contributors: kyanoapp
 Tags: images, optimize, resize, webp, convert, jpeg2000, optimize images, convert webp, lazy load, resize images, compress images, webp, performance, optimization, photography, optimizer, image optimizer, image compress, image optimize, webp format
 Requires at least: 5.3
@@ -43,12 +44,13 @@ Are you desperately looking for ways to increase your websites loading time? Loo
 * Future formats are supported
 
 **Partners**
-- Easy implementation and onboarding
-- Free forever plan for your own website
-- Your own Afosto partner account
-- Monthly recurring commissions on all customers
-- Beautiful presentations for you and your customers
-- Premium partner support
+
+* Easy implementation and onboarding
+* Free forever plan for your own website
+* Your own Afosto partner account
+* Monthly recurring commissions on all customers
+* Beautiful presentations for you and your customers
+* Premium partner support
 
 **ABOUT AFOSTO**
 
@@ -74,7 +76,7 @@ You will find the terms of use of Quicq on our [website](https://afosto.com/apps
 
 **CREDITS**
 
-This plugin is written by [SnelWebCenter](https://snelwebcenter.nl) big thanks to their team for their continues support and the fun collaboration!
+This plugin is written in collaboration with [SnelWebCenter](https://snelwebcenter.nl) big thanks to their team for their continues support and the fun collaboration!
 
 == Frequently Asked Questions ==
 
@@ -90,11 +92,19 @@ Sure, our free forever plan includes 100.000 optimizations and 25GB of bandwidth
 
 The source file of your image will be replaced by a WebP format of the image from the Quicq CDN. So it doesn't really matter if you use PNG or JPG images on your site we will optimize them in the best format possible.
 
+= Will Quicq improve my Google Pagespeed scores? =
+
+Quicq will fix 2 of the most common issues which come up in the [Google Pagespeed test](https://pagespeed.web.dev/)
+
+* Properly size images
+* Serve images in next-gen formats
+
 == Screenshots ==
 
 1. Get started within 5 minutes with Quicq
 2. upto 1000% savings
-
+3. Improve your Google Pagespeed scores with Quicq
+4. Google Pagespeed Issues Solved by Quicq
 
 == Changelog ==
 
