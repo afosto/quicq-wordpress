@@ -26,8 +26,12 @@ add_action( 'init', 'quicq_load_textdomain', 1 );
 add_action( 'admin_head', 'plugin_style_quicq' );
 add_action( 'admin_menu', 'quicq_init_page' );
 add_action( 'admin_init', 'add_settings_quicq' );
-add_action( 'admin_enqueue_scripts', 'quicq_add_styles', 0 );
 
+if (isset($_GET['page'])) {
+    if ($_GET['page'] == 'quicq_adminpage') {  
+        add_action( 'admin_enqueue_scripts', 'quicq_add_styles', 0 );
+    }
+}
 /**
  * Multilanguage function
  * @since 1.0.0
@@ -98,6 +102,7 @@ function quicq_adminpage() {
 			update_option( 'upload_url_path', $quicq_url );
 			update_option( 'quicq_key', $quicq_url );
 		}
+
 		if($_POST['action'] == 'update'){
 			if ( ! isset( $_POST['quicq_enabled'] )) {
 				update_option( 'quicq_enabled', 0 );
@@ -269,9 +274,11 @@ function plugin_style_quicq() {
 	?>
     <style media="screen">
         .wp-menu-image img {
-            width: 100%;
-            height: 100%;
             padding-top: unset !important;
+            width: 25px;
+            height: 25px;
+            margin-top: 5px;
+            border-radius: 2px;
         }
     </style>
 	<?php
