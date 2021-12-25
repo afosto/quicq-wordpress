@@ -98,14 +98,15 @@ function quicq_adminpage() {
 			update_option( 'upload_url_path', $quicq_url );
 			update_option( 'quicq_key', $quicq_url );
 		}
-
-		if ( ! isset( $_POST['quicq_enabled'] ) ) {
-			update_option( 'quicq_enabled', 0 );
-			update_option( 'upload_url_path', '' );
-		} else {
-			$isEnabled = filter_input( INPUT_POST, 'quicq_enabled', FILTER_SANITIZE_NUMBER_INT );
-			update_option( 'quicq_enabled', $isEnabled );
-			update_option( 'upload_url_path', get_option( 'quicq_key' ) );
+		if($_POST['action'] == 'update'){
+			if ( ! isset( $_POST['quicq_enabled'] )) {
+				update_option( 'quicq_enabled', 0 );
+				update_option( 'upload_url_path', '' );
+			} else {
+				$isEnabled = filter_input( INPUT_POST, 'quicq_enabled', FILTER_SANITIZE_NUMBER_INT );
+				update_option( 'quicq_enabled', $isEnabled );
+				update_option( 'upload_url_path', get_option( 'quicq_key' ) );
+			}
 		}
 	}
 
