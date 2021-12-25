@@ -3,7 +3,7 @@
  * Plugin Name:    Quicq for WebP images
  * Plugin URI:     https://quicq.io/
  * Description:    Quicq integration for Wordpress.
- * Version:        1.0
+ * Version:        1.1
  * Author:        Afosto
  * Author URI:    https://afosto.com
  * Domain Path:   /languages
