@@ -124,7 +124,7 @@ function quicq_adminpage() {
                 <div class="col-12 py-3">
 					<?php quicq_logo(); ?>
                     <h1 class="quicq-h3"><?php echo _e( 'Boost your website', 'quicq' ); ?></h1>
-                    <div><?php echo _e( 'Optimize smart and easy your images for your website.', 'quicq' ); ?></div>
+                    <div><?php echo _e( 'Compress images and improve your pagespeed with Quicq.', 'quicq' ); ?></div>
                 </div>
                 <div class="col-12 py-3"></div>
             </div>
@@ -159,7 +159,7 @@ function quicq_adminpage() {
                     <div class="quicq-card">
                         <div class="quicq-card-body p-3 mb-1">
                             <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'About Quicq', 'quicq' ); ?></div>
-                            <div class="quicq-text-meta"><?php echo _e( 'Speed ​​up the loading time of your website or webshop up to 80% with Quicq. Your visitors stay longer on your website and rank better in search engines.', 'quicq' ); ?></div>
+                            <div class="quicq-text-meta"><?php echo _e( 'Speed ​​up the loading time of your website or webshop up to 80% with Quicq. Improve pagespeed, outperform competitord and boost your SEO.', 'quicq' ); ?></div>
                         </div>
                         <a href="https://afosto.com/docs/apps/quicq/wordpress-en/" target="_blank"
                            class="quicq-card-body text-dark text-decoration-none d-block p-3 mb-1">
@@ -170,7 +170,7 @@ function quicq_adminpage() {
                                     </div>
                                 </div>
                                 <div class="col-11">
-                                    <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'How can i install Quicq?', 'quicq' ); ?></div>
+                                    <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'How to setup Quicq?', 'quicq' ); ?></div>
                                     <div class="quicq-text-meta text-primary"><?php echo _e( 'Go to docs', 'quicq' );
 										echo quicq_arrow_icon(); ?> </div>
                                 </div>
