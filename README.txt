@@ -76,7 +76,7 @@ You will find the terms of use of Quicq on our [website](https://afosto.com/apps
 
 **CREDITS**
 
-This plugin is written in collaboration with [SnelWebCenter](https://snelwebcenter.nl) big thanks to their team for their continues support and the fun collaboration!
+This plugin is written in collaboration with [SnelWebCenter](https://snelwebcenter.nl) big thanks to their team for their continuous support and the fun collaboration!
 
 == Frequently Asked Questions ==
 
