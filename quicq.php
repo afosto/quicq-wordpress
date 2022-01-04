@@ -27,10 +27,18 @@ add_action( 'admin_head', 'plugin_style_quicq' );
 add_action( 'admin_menu', 'quicq_init_page' );
 add_action( 'admin_init', 'add_settings_quicq' );
 
-if (isset($_GET['page'])) {
-    if ($_GET['page'] == 'quicq_adminpage') {  
-        add_action( 'admin_enqueue_scripts', 'quicq_add_styles', 0 );
-    }
+/**
+ * added hooks when deactivating and removing
+ * @since 1.2
+ */
+register_uninstall_hook( __FILE__, 'quicq_uninstall' );
+register_deactivation_hook( __FILE__, 'quicq_deactivate' );
+
+
+if ( isset( $_GET['page'] ) ) {
+	if ( $_GET['page'] == 'quicq_adminpage' ) {
+		add_action( 'admin_enqueue_scripts', 'quicq_add_styles', 0 );
+	}
 }
 /**
  * Multilanguage function
@@ -43,6 +51,28 @@ function quicq_load_textdomain() {
 	}
 
 	load_theme_textdomain( 'quicq', dirname( __FILE__ ) . '/languages' );
+}
+
+/**
+ * function for when the plugin is being deactivated
+ * @since 1.2.0
+ */
+function quicq_deactivate() {
+	update_option( 'quicq_enabled', 0 );
+	update_option( 'upload_url_path', '' );
+}
+
+/**
+ * function which uninstalls the plugin, removes traces for settings
+ * @since 1.2.0
+ */
+function quicq_uninstall() {
+	delete_option( 'quicq_enabled' );
+	delete_option( 'quicq_key' );
+	delete_option( 'upload_url_path' );
+	unregister_setting( 'quicq-page', 'upload_url_path' );
+	unregister_setting( 'quicq-page', 'quicq_enabled' );
+	unregister_setting( 'quicq-page', 'quicq_key' );
 }
 
 /**
@@ -103,8 +133,8 @@ function quicq_adminpage() {
 			update_option( 'quicq_key', $quicq_url );
 		}
 
-		if($_POST['action'] == 'update'){
-			if ( ! isset( $_POST['quicq_enabled'] )) {
+		if ( $_POST['action'] == 'update' ) {
+			if ( ! isset( $_POST['quicq_enabled'] ) ) {
 				update_option( 'quicq_enabled', 0 );
 				update_option( 'upload_url_path', '' );
 			} else {

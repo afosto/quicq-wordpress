@@ -4,7 +4,7 @@ Contributors: kyanoapp
 Tags: images, optimize, resize, webp, convert, jpeg2000, optimize images, convert webp, lazy load, resize images, compress images, webp, performance, optimization, photography, optimizer, image optimizer, image compress, image optimize, webp format, convert webp
 Requires at least: 5.3
 Tested up to: 5.8.2
-Stable tag: 1.1
+Stable tag: 1.2
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,15 @@ Quicq will fix 2 of the most common issues which come up in the [Google Pagespee
 4. Google Pagespeed Issues Solved by Quicq
 
 == Changelog ==
+
+= 1.2.0 ( 2022-01-04 ) =
+
+- Enhance: added uninstall hook, to remove settings when the plugin is removed
+- Fix: fixed an issue when deactivating the plugin it would still serve images
+
+= 1.1.0 ( 2021-12-25 ) =
+
+- Fix: fixed a bug when refreshing the page would deactivate the plugin
 
 
 == Upgrade Notice ==
