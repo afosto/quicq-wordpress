@@ -54,7 +54,7 @@ Are you desperately looking for ways to increase your websites loading time? Sto
 
 **Quicq Review video**
 
-[youtube https://www.youtube.com/watch?v=GSAuASCrogU&t=9s ]
+[youtube https://www.youtube.com/watch?v=GSAuASCrogU&t=9s]
 
 **Why use Quicq Image Optimizer?**
 
