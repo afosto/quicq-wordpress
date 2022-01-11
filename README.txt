@@ -52,6 +52,10 @@ Are you desperately looking for ways to increase your websites loading time? Sto
 * Beautiful presentations for you and your customers
 * Premium partner support
 
+**Quicq Review video**
+
+[youtube https://www.youtube.com/watch?v=GSAuASCrogU&t=9s ]
+
 **Why use Quicq Image Optimizer?**
 
 
