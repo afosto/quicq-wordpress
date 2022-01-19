@@ -4,7 +4,7 @@ Contributors: kyanoapp
 Tags: images, optimize, resize, webp, convert, jpeg2000, optimize images, convert webp, lazy load, resize images, compress images, webp, performance, optimization, photography, optimizer, image optimizer, image compress, image optimize, webp format, convert webp
 Requires at least: 5.3
 Tested up to: 5.8.2
-Stable tag: 1.2
+Stable tag: 1.3
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -249,6 +249,18 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 6. Afosto dashboard
 
 == Changelog ==
+
+= 1.3.0 (2022-01-19) =
+
+- Fix: Added missing bootstrap.min.css.map
+- Fix: Vertical scroll has been fixed
+- Fix: Fixed some issues when saving the form, field would not reset
+
+- Enhance: Renamed the translations files to have the correct names according to the intl18 specifications
+- Enhance: Updated the translations
+- Enhance: Fixed some typo's
+- Enhance: Added function safty checkes
+- Enhance: Added en enable hook from the plugin page, wil now also active quicq when a proxy is filled in
 
 = 1.2.0 ( 2022-01-04 ) =
 

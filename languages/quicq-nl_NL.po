@@ -6,10 +6,10 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/quicq-"
 "wordpress\n"
 "POT-Creation-Date: 2022-01-19T11:50:58+01:00\n"
-"PO-Revision-Date: 2022-01-19 12:10+0100\n"
+"PO-Revision-Date: 2022-01-19 12:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: de_DE\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #. Plugin Name of the plugin
 msgid "Quicq for WebP images"
-msgstr "Quicq für WebP Bilder"
+msgstr "Quicq voor WebP afbeeldingen"
 
 #. Plugin URI of the plugin
 msgid "https://quicq.io/"
-msgstr "https://quicq.io/"
+msgstr "https://quicq.io"
 
 #. Description of the plugin
 msgid "Quicq integration for Wordpress."
-msgstr "Quicq-Integration für Wordpress."
+msgstr "Quicq integratie voor Wordpress."
 
 #. Author of the plugin
 msgid "Afosto"
@@ -43,56 +43,56 @@ msgstr "Quicq"
 
 #: quicq.php:156
 msgid "Boost your website"
-msgstr "Beschleunige deine Website"
+msgstr "Boost jouw website"
 
 #: quicq.php:157
 msgid "Compress images and improve your pagespeed with Quicq."
-msgstr "Komprimiere Bilder und verbessere deinen Pagespeed mit Quicq."
+msgstr "Optimaliseer afbeeldingen en verbeter je pagespeed met Quicq."
 
 #: quicq.php:169
 msgid "Join Quicq"
-msgstr "Join Quicq"
+msgstr "Meld je aan bij Quicq"
 
 #: quicq.php:170
 msgid "Create your free account"
-msgstr "Erstelle dein kostenloses Konto"
+msgstr "Maak een gratis account aan"
 
 #: quicq.php:174
 msgid "Sign up"
-msgstr "Anmelden"
+msgstr "Registreren"
 
 #: quicq.php:176
 msgid "Log in"
-msgstr "Einloggen"
+msgstr "Inloggen"
 
 #: quicq.php:191
 msgid "About Quicq"
-msgstr "Über Quicq"
+msgstr "Over Quicq"
 
 #: quicq.php:192
 msgid ""
 "Speed ​​up the loading time of your website or webshop by up to 80% with "
 "Quicq. Improve pagespeed, outperform competitors and boost your SEO."
 msgstr ""
-"Beschleunige die Ladezeit deiner Website oder deines Webshops um bis zu "
-"80% mit Quicq. Verbessere den Pagespeed, übertreffe deine Konkurrenten "
-"und steigere dein SEO."
+"Versnel de laadtijd van je website of webshop tot wel 80% met Quicq. "
+"Verbeter de pagespeed, presteer beter dan je concurrenten en geef je SEO "
+"een boost."
 
 #: quicq.php:203
 msgid "How to setup Quicq?"
-msgstr "Wie richte ich Quicq ein?"
+msgstr "Hoe stel je Quicq in?"
 
 #: quicq.php:204
 msgid "Go to docs"
-msgstr "Zu den Docs gehen"
+msgstr "Ga naar documentatie"
 
 #: quicq.php:212
 msgid "Contribution"
-msgstr "Beitrag"
+msgstr "Samenwerking"
 
 #: quicq.php:213
 msgid "This plugin was made in collaboration with"
-msgstr "Dieses Plugin wurde in Zusammenarbeit erstellt mit"
+msgstr "Deze plugin werd gemaakt in samenwerking met"
 
 #: quicq.php:215
 msgid "Kyano.app"
@@ -100,11 +100,11 @@ msgstr "Kyano.app"
 
 #: quicq.php:231
 msgid "URL Key:"
-msgstr "URL-Schlüssel:"
+msgstr "URL sleutel:"
 
 #: quicq.php:232
 msgid "Example:"
-msgstr "Beispiel:"
+msgstr "Voorbeeld:"
 
 #: quicq.php:233
 msgid "quicq"
@@ -112,8 +112,8 @@ msgstr "quicq"
 
 #: quicq.php:265
 msgid "Activate Quicq"
-msgstr "Quicq aktivieren"
+msgstr "Activeer Quicq"
 
 #: quicq.php:266
 msgid "Activate quicq on your website."
-msgstr "Aktiviere Quicq auf deiner Website."
+msgstr "Activeer Quicq op jouw website."
