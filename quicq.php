@@ -167,7 +167,7 @@ function quicq_adminpage() {
                         <div class="row">
                             <div class="col-md-8 my-auto">
                                 <h4 class="quicq-h4"> <?php echo _e( 'Join Quicq', 'quicq' ); ?> </h4>
-                                <div class="quicq-text-meta"><?php echo _e( 'Create you free account', 'quicq' ); ?></div>
+                                <div class="quicq-text-meta"><?php echo _e( 'Create your free account', 'quicq' ); ?></div>
                             </div>
                             <div class="col-md-4 my-auto text-center">
                                 <a class="quicq-btn quicq-btn-primary btn-block w-300" target="_blank"
@@ -189,7 +189,7 @@ function quicq_adminpage() {
                     <div class="quicq-card">
                         <div class="quicq-card-body p-3 mb-1">
                             <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'About Quicq', 'quicq' ); ?></div>
-                            <div class="quicq-text-meta"><?php echo _e( 'Speed ​​up the loading time of your website or webshop up to 80% with Quicq. Improve pagespeed, outperform competitord and boost your SEO.', 'quicq' ); ?></div>
+                            <div class="quicq-text-meta"><?php echo _e( 'Speed ​​up the loading time of your website or webshop by up to 80% with Quicq. Improve pagespeed, outperform competitors and boost your SEO.', 'quicq' ); ?></div>
                         </div>
                         <a href="https://afosto.com/docs/apps/quicq/wordpress-en/" target="_blank"
                            class="quicq-card-body text-dark text-decoration-none d-block p-3 mb-1">
@@ -262,8 +262,8 @@ function quicq_adminpage() {
                                             </label>
                                         </div>
                                         <div class="my-auto">
-                                            <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'Enable Quicq', 'quicq' ); ?></div>
-                                            <div class="quicq-text-meta"><?php echo _e( 'Activate quicq in your website.', 'quicq' ); ?></div>
+                                            <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'Activate Quicq', 'quicq' ); ?></div>
+                                            <div class="quicq-text-meta"><?php echo _e( 'Activate quicq on your website.', 'quicq' ); ?></div>
                                         </div>
 
                                     </div>
