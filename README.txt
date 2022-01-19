@@ -248,6 +248,20 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 5. Admin panel Quicq
 6. Afosto dashboard
 
+== Installation ==
+
+1. Upload the Quicq plugin to your /wp-content/plugins/ directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Create your free Afosto account via https://afosto.app/auth/signup
+4. Install the Quicq app in your Afosto account 
+5. Create your own CDN through the onboarding steps in Afosto
+6. Copy the URL key from your CDN into the Qucq plugin settings
+7. Check Activate Quicq to optimize all your images
+8. Enjoy optimized images on your WordPress site
+
+**Quicq for WordPress Install Video**
+[youtube https://www.youtube.com/watch?v=Ml13g67_J0Q]
+
 == Changelog ==
 
 = 1.3.0 (2022-01-19) =
