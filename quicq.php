@@ -243,7 +243,7 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
                             <div class="row">
                                 <div class="col-md-8 my-auto">
                                     <h4 class="quicq-h4"> <?php echo _e( 'Join Quicq', 'quicq' ); ?> </h4>
-                                    <div class="quicq-text-meta"><?php echo _e( 'Create your free account', 'quicq' ); ?></div>
+                                    <div class="quicq-text-meta"><?php echo _e( 'Create a URL key in your Afosto account and enter it below to get your images in AVIF or WebP.', 'quicq' ); ?></div>
                                 </div>
                                 <div class="col-md-4 my-auto text-center">
                                     <a class="quicq-btn quicq-btn-primary btn-block w-300" target="_blank"
