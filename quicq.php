@@ -17,6 +17,26 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+add_action( 'init', 'quicq_active', 1 );
+function quicq_active(){
+	if(get_option( 'quicq_enabled' ) == 1 && !is_admin()){
+			ob_start("quicq_activated");
+	}
+
+}
+
+function quicq_activated($content){
+	$content = preg_replace_callback('/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpg|.jpeg)/', 'replace', $content);
+	return $content;
+}
+
+function replace($images) {
+	$quicq_url = get_option( 'quicq_key' );
+	foreach($images as &$i){
+		$i = str_replace(site_url()."/wp-content", $quicq_url, $i);
+	}
+	return $images[0];
+}
 
 /**
  * All add_action hooks
@@ -65,7 +85,6 @@ if ( ! function_exists( ' quicq_load_textdomain' ) ) {
 if ( ! function_exists( ' quicq_deactivate' ) ) {
 	function quicq_deactivate() {
 		update_option( 'quicq_enabled', 0 );
-		update_option( 'upload_url_path', '' );
 	}
 }
 
@@ -77,7 +96,7 @@ if ( ! function_exists( ' quicq_activate' ) ) {
 	function quicq_activate() {
 		if ( get_option( 'quicq_key' ) != "" ) {
 			update_option( 'quicq_enabled', 1 );
-			update_option( 'upload_url_path', get_option( 'quicq_key' ) );
+
 		}
 	}
 }
@@ -90,8 +109,6 @@ if ( ! function_exists( ' quicq_uninstall' ) ) {
 	function quicq_uninstall() {
 		delete_option( 'quicq_enabled' );
 		delete_option( 'quicq_key' );
-		delete_option( 'upload_url_path' );
-		unregister_setting( 'quicq-page', 'upload_url_path' );
 		unregister_setting( 'quicq-page', 'quicq_enabled' );
 		unregister_setting( 'quicq-page', 'quicq_key' );
 	}
@@ -204,7 +221,7 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
 				if ( isset( $_POST['quicq_key'] ) ) {
 					$quicqKey  = sanitize_key( wp_unslash( $_POST['quicq_key'] ) );
 					$quicq_url = 'https://cdn.quicq.io/' . $quicqKey;
-					update_option( 'upload_url_path', $quicq_url );
+
 					update_option( 'quicq_key', $quicq_url );
 				}
 
@@ -212,16 +229,16 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
 
 					if ( get_option( 'quicq_key' ) === "https://cdn.quicq.io/" || ! isset( $_POST['quicq_enabled'] ) ) {
 						update_option( 'quicq_enabled', 0 );
-						update_option( 'upload_url_path', '' );
+
 					} else {
 						$isEnabled = filter_input( INPUT_POST, 'quicq_enabled', FILTER_SANITIZE_NUMBER_INT );
 						update_option( 'quicq_enabled', $isEnabled );
-						update_option( 'upload_url_path', get_option( 'quicq_key' ) );
+
 					}
 				}
 			}
 		}
-
+		
 
 		?>
 
@@ -356,4 +373,3 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
 		<?php
 	}
 }
-
