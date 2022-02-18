@@ -17,26 +17,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-add_action( 'init', 'quicq_active', 1 );
-function quicq_active(){
-	if(get_option( 'quicq_enabled' ) == 1 && !is_admin()){
-			ob_start("quicq_activated");
-	}
-
-}
-
-function quicq_activated($content){
-	$content = preg_replace_callback('/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpg|.jpeg)/', 'replace', $content);
-	return $content;
-}
-
-function replace($images) {
-	$quicq_url = get_option( 'quicq_key' );
-	foreach($images as &$i){
-		$i = str_replace(site_url()."/wp-content", $quicq_url, $i);
-	}
-	return $images[0];
-}
 
 /**
  * All add_action hooks
@@ -48,6 +28,12 @@ add_action( 'admin_head', 'quicq_plugin_style' );
 add_action( 'admin_menu', 'quicq_init_page' );
 add_action( 'admin_init', 'quicq_add_settings' );
 
+
+/**
+ * hook that defines if quicq is active
+ * @since 1.4
+ */
+add_action( 'init', 'quicq_active', 1 );
 /**
  * added hooks when deactivating and removing
  * @since 1.2
@@ -66,8 +52,6 @@ if ( isset( $_GET['page'] ) ) {
  * Multilanguage function
  * @since 1.0.0
  */
-
-
 if ( ! function_exists( ' quicq_load_textdomain' ) ) {
 	function quicq_load_textdomain() {
 		if ( is_textdomain_loaded( 'quicq' ) ) {
@@ -75,6 +59,46 @@ if ( ! function_exists( ' quicq_load_textdomain' ) ) {
 		}
 
 		load_theme_textdomain( 'quicq', dirname( __FILE__ ) . '/languages' );
+	}
+}
+
+/**
+ * function that starts the content rewrite if quicq is enabled
+ * @since 1.0.0
+ */
+if ( ! function_exists( ' quicq_active' ) ) {
+	function quicq_active() {
+		if ( get_option( 'quicq_enabled' ) == 1 && ! is_admin() ) {
+			ob_start( "quicq_activated" );
+		}
+	}
+}
+
+/**
+ * function that rewrites the the urls within the html content
+ * @since 1.4.0
+ */
+if ( ! function_exists( ' quicq_activated' ) ) {
+	function quicq_activated( $content ) {
+		$content = preg_replace_callback( '/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}(\.[a-zA-Z0-9()]{1,6}|:\d+)\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpe?g)/', 'quicq_rewrite_url', $content );
+
+		return $content;
+	}
+}
+
+/**
+ * function thar replaces an wp-content url to the quicq cdn url
+ * @since 1.4.0
+ */
+if ( ! function_exists( ' quicq_rewrite_url' ) ) {
+	function quicq_rewrite_url( $images ) {
+		$quicq_url = get_option( 'quicq_key' );
+		foreach ( $images as &$imageUrl ) {
+			//rewrite all images that originate from the wp-content folder
+			$imageUrl = str_replace( site_url() . "/wp-content", $quicq_url, $imageUrl );
+		}
+
+		return $images[0];
 	}
 }
 
@@ -157,7 +181,6 @@ if ( ! function_exists( ' quicq_init_page' ) ) {
  */
 if ( ! function_exists( ' quicq_add_settings' ) ) {
 	function quicq_add_settings() {
-		register_setting( 'quicq-page', 'upload_url_path' );
 		register_setting( 'quicq-page', 'quicq_enabled' );
 		register_setting( 'quicq-page', 'quicq_key' );
 	}
@@ -238,7 +261,7 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
 				}
 			}
 		}
-		
+
 
 		?>
 
@@ -295,7 +318,7 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
                                     <div class="col-11">
                                         <div class="quicq-h5 quicq-margin-remove"><?php echo _e( 'How to setup Quicq?', 'quicq' ); ?></div>
                                         <div class="quicq-text-meta text-primary"><?php echo _e( 'Go to docs', 'quicq' );
-											 quicq_arrow_icon(); ?> </div>
+											quicq_arrow_icon(); ?> </div>
                                     </div>
                                 </div>
 
@@ -329,19 +352,9 @@ if ( ! function_exists( ' quicq_adminpage' ) ) {
                                             </div>
                                             <div style="margin-top: 10px;">
                                                 <label class="quicq-margin-left col-12" for="quicq_key">
-													<?php if ( get_option( 'upload_url_path' ) == '' ) { ?>
-														<?php $key = str_replace( "https://cdn.quicq.io/", "", get_option( 'quicq_key' ) ); ?>
-                                                        <input type="text" name="quicq_key"
-                                                               value="<?php echo esc_attr( $key ); ?>"/>
-														<?php
-													} else {
-														$key = str_replace( "https://cdn.quicq.io/", "", get_option( 'upload_url_path' ) ); ?>
-                                                        <input type="text" name="quicq_key"
-                                                               value="<?php echo esc_attr( $key ); ?>"/>
-														<?php
-													}
-													?>
 
+                                                    <input type="text" name="quicq_key"
+                                                           value="<?php echo esc_attr( str_replace( "https://cdn.quicq.io/", "", get_option( 'quicq_key' ) ) ); ?>"/>
                                                 </label>
                                             </div>
                                         </div>

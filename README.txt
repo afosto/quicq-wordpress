@@ -3,8 +3,8 @@ Plugin Name: Convert webp | Quicq | #1 in Image Optimization & Compression | Imp
 Contributors: kyanoapp
 Tags: images, optimize, resize, webp, convert, jpeg2000, optimize images, convert webp, lazy load, resize images, compress images, webp, performance, optimization, photography, optimizer, image optimizer, image compress, image optimize, webp format, convert webp
 Requires at least: 5.3
-Tested up to: 5.8.2
-Stable tag: 1.3
+Tested up to: 5.9.0
+Stable tag: 1.4
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -255,7 +255,7 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 3. Create your free Afosto account via https://afosto.app/auth/signup
 4. Install the Quicq app in your Afosto account 
 5. Create your own CDN through the onboarding steps in Afosto
-6. Copy the URL key from your CDN into the Qucq plugin settings
+6. Copy the URL key from your CDN into the Quicq plugin settings
 7. Check Activate Quicq to optimize all your images
 8. Enjoy optimized images on your WordPress site
 
@@ -263,6 +263,13 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 [youtube https://www.youtube.com/watch?v=Ml13g67_J0Q]
 
 == Changelog ==
+
+= 1.4.0 (2022-02-18) =
+
+- Fix: some images didnt get rewritten, this has been fixed
+
+- Enhance: improved the way we write the image urls
+- Enhance: validated compatibility with wordpress 5.9.0
 
 = 1.3.0 (2022-01-19) =
 
@@ -273,7 +280,7 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 - Enhance: Renamed the translations files to have the correct names according to the intl18 specifications
 - Enhance: Updated the translations
 - Enhance: Fixed some typo's
-- Enhance: Added function safty checkes
+- Enhance: Added function safety checks
 - Enhance: Added en enable hook from the plugin page, wil now also active quicq when a proxy is filled in
 
 = 1.2.0 ( 2022-01-04 ) =
