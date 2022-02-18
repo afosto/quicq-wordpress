@@ -1,7 +1,7 @@
-=== Convert webp | Quicq | #1 in Image Optimization & Compression | Improve your Google Pagespeed ===
-Plugin Name: Convert webp | Quicq | #1 in Image Optimization & Compression | Improve your Google Pagespeed
+=== Convert WebP & AVIF | Quicq | Best image optimizer and compression plugin | Improve your Google Pagespeed ===
+Plugin Name: Convert WebP & AVIF | Quicq | Best image optimizer and compression plugin | Improve your Google Pagespeed
 Contributors: kyanoapp
-Tags: images, optimize, resize, webp, convert, jpeg2000, optimize images, convert webp, lazy load, resize images, compress images, webp, performance, optimization, photography, optimizer, image optimizer, image compress, image optimize, webp format, convert webp
+Tags: convert webp, convert AVIF, image optimization, optimize images, resize images, compress images, webp, AVIF, image optimizer, image compress, image optimize, webp format, AVIF format
 Requires at least: 5.3
 Tested up to: 5.9.0
 Stable tag: 1.4
@@ -36,7 +36,7 @@ Are you desperately looking for ways to increase your websites loading time? Sto
 **Developers**
 
 * Upload images once (source) and always have all formats available and be flexible with changes (on the fly)
-* Upload images once and all file types are always available (jpg, png, webp)
+* Upload images once and all file types are always available (jpg, png, webp, AVIF)
 * Less traffic/load on the web servers (only have to serve HTML)
 * Smart cropping
 * No need to install/connect a CDN yourself
@@ -105,7 +105,7 @@ loading with a CDN and perfectly sized images, then you should definitely try Qu
 
 **Compress Images Automatically**
 
-With Quicq, images are automatically compressed, correctly sized to fit the page and device standards, lazy-loaded, and quickly converted to the next-gen WebP format.
+With Quicq, images are automatically compressed, correctly sized to fit the page and device standards, lazy-loaded, and quickly converted to the next-gen WebP or AVIF formats.
 
 **Plugin Compatibility**
 Quicq has already been tested with hundreds of different WordPress plugins and themes. It's highly recommended by them due to its advanced functionalities, customization options.
@@ -185,7 +185,7 @@ EXIF data does not impact SEO. It is recommended to remove EXIF data by Google.
 
 The process of image optimization is done automatically and there is no need to do it manually one-by-one.
 
-With the assistance of Quicq, images are automatically compressed, correctly sized in order to fit the page and device standards, lazy-loaded, and quickly converted to the next-gen WebP format.
+With the assistance of Quicq, images are automatically compressed, correctly sized in order to fit the page and device standards, lazy-loaded, and quickly converted to the next-gen WebP or AVIF formats.
 
 = Does the plugin replace my existing images? =
 
@@ -197,7 +197,7 @@ Sure, our free forever plan includes 100.000 optimizations and 25GB of bandwidth
 
 = What kind of file should I use for my images? =
 
-The source file of your image will be replaced by a WebP format of the image from the Quicq CDN. So it doesn't really matter if you use PNG or JPG images on your site we will optimize them in the best format possible.
+The source file of your image will be replaced by a WebP or AVIF format of the image from the Quicq CDN. So it doesn't really matter if you use PNG or JPG images on your site we will optimize them in the best format possible.
 
 = Does it affect my website score, time, conversion, or hosting costs? =
 
