@@ -4,7 +4,7 @@ Contributors: kyanoapp
 Tags: convert webp, convert AVIF, image optimization, optimize images, resize images, compress images, webp, AVIF, image optimizer, image compress, image optimize, webp format, AVIF format
 Requires at least: 5.3
 Tested up to: 5.9.0
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -264,6 +264,10 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 
 == Changelog ==
 
+
+= 1.4.2 (2022-05-20) =
+
+- Enhance: improved the image matching, with added support for webp to avif
 
 = 1.4.1 (2022-02-18) =
 
