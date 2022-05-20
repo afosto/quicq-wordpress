@@ -80,7 +80,7 @@ if ( ! function_exists( ' quicq_active' ) ) {
  */
 if ( ! function_exists( ' quicq_activated' ) ) {
 	function quicq_activated( $content ) {
-		$content = preg_replace_callback( '/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}(\.[a-zA-Z0-9()]{1,6}|:\d+)\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpe?g)/', 'quicq_rewrite_url', $content );
+		$content = preg_replace_callback( '/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}(\.[a-zA-Z0-9()]{1,6}|:\d+)\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpe?g|webp)/', 'quicq_rewrite_url', $content );
 
 		return $content;
 	}
