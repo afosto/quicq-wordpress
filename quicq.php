@@ -3,7 +3,7 @@
  * Plugin Name:    Quicq for WebP images
  * Plugin URI:     https://afosto.com/apps/quicq/
  * Description:    Quicq integration for Wordpress.
- * Version:        1.4.2
+ * Version:        1.4.0
  * Author:        Afosto
  * Author URI:    https://afosto.com
  * Domain Path:   /languages
@@ -42,6 +42,63 @@ register_uninstall_hook( __FILE__, 'quicq_uninstall' );
 register_deactivation_hook( __FILE__, 'quicq_deactivate' );
 register_activation_hook( __FILE__, 'quicq_activate' );
 
+
+add_action( 'upgrader_process_complete', 'quicq_upgrader_process_complete', 10, 2 );
+/**
+ * Upgrader process complete.
+ *
+ * @param \WP_Upgrader $upgrader_object
+ * @param array $hook_extra
+ *
+ * @see \WP_Upgrader::run() (wp-admin/includes/class-wp-upgrader.php)
+ */
+function quicq_upgrader_process_complete( \WP_Upgrader $upgrader_object, $hook_extra ) {
+	$quicqUpdated = false;
+	if ( isset( $hook_extra['plugins'] ) && is_array( $hook_extra['plugins'] ) ) {
+		foreach ( $hook_extra['plugins'] as $index => $plugin ) {
+			if ( __FILE__ === $plugin ) {
+				$quicqUpdated = true;
+				break;
+			}
+		}
+	}
+
+
+	if ( ! $quicqUpdated || get_option( 'quicq_key', "" ) == "" ) {
+		// quicq is not updated or the proxy key is empty
+		return;
+	}
+
+
+	// get current plugin version. ( https://wordpress.stackexchange.com/a/18270/41315 )
+	if ( ! function_exists( 'get_plugin_data' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	}
+	// https://developer.wordpress.org/reference/functions/get_plugin_data/
+	$plugin_data = get_plugin_data( __FILE__ );
+
+	$upgraderUrl = sprintf( "https://afosto.app/api/storage/quicq/proxies/%s/wordpress/upgrade", str_replace( "https://cdn.quicq.io/", "", get_option( 'quicq_key' ) ) );
+
+
+	$data = [
+		"data" => [
+			"version"           => ( isset( $plugin_data['Version'] ) ? $plugin_data['Version'] : 'unknown.version' ),
+			"site_url"          => site_url(),
+			"wordpress_version" => get_bloginfo( 'version' ),
+		],
+	];
+	$ch   = curl_init( $upgraderUrl );
+	curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, "PUT" );
+	curl_setopt( $ch, CURLOPT_HEADER, "application/vnd.afosto.api.v1+json" );
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode( $data ) );
+
+	$response = curl_exec( $ch );
+
+	if ( ! $response ) {
+		return false;
+	}
+	return true;
+}
 
 if ( isset( $_GET['page'] ) ) {
 	if ( $_GET['page'] == 'quicq_adminpage' ) {
