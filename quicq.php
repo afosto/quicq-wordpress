@@ -3,7 +3,7 @@
  * Plugin Name:    Quicq for WebP images
  * Plugin URI:     https://afosto.com/apps/quicq/
  * Description:    Quicq integration for Wordpress.
- * Version:        1.4.2
+ * Version:        1.4.3
  * Author:        Afosto
  * Author URI:    https://afosto.com
  * Domain Path:   /languages
@@ -42,6 +42,67 @@ register_uninstall_hook( __FILE__, 'quicq_uninstall' );
 register_deactivation_hook( __FILE__, 'quicq_deactivate' );
 register_activation_hook( __FILE__, 'quicq_activate' );
 
+add_action( 'upgrader_process_complete', 'quicq_upgrader_process_complete', 10, 2 );
+/**
+ * Upgrader process complete.
+ *
+ * @param \WP_Upgrader $upgrader_object
+ * @param array $hook_extra
+ *
+ * @see \WP_Upgrader::run() (wp-admin/includes/class-wp-upgrader.php)
+ */
+if ( ! function_exists( ' quicq_upgrader_process_complete' ) ) {
+	function quicq_upgrader_process_complete( $upgrader_object, $options ) {
+		$current_plugin_path_name = plugin_basename( __FILE__ );
+
+		if ( $options['action'] == 'update' && $options['type'] == 'plugin' ) {
+			foreach ( $options['plugins'] as $each_plugin ) {
+				if ( $each_plugin == $current_plugin_path_name ) {
+					// Set a transient to record that our plugin has just been updated
+					set_transient( 'wp_quicq_updated', 1 );
+				}
+			}
+		}
+	}
+}
+
+
+/**
+ * Show a notice to anyone who has just updated this plugin
+ * This notice shouldn't display to anyone who has just installed the plugin for the first time
+ */
+if ( ! function_exists( ' quicq_trigger_update' ) ) {
+	function quicq_trigger_update() {
+		// Check the transient to see if we've just updated the plugin
+		if ( get_transient( 'wp_quicq_updated' ) ) {
+
+			global $wp_version;
+			$plugin_version = null;
+			if ( preg_match( '/\*[\s\t]+?version:[\s\t]+?([0-9.]+)/i', file_get_contents( __FILE__ ), $v ) ) {
+				$plugin_version = $v[1];
+			}
+
+			$siteKey = str_replace( "https://cdn.quicq.io/", "", get_option( 'quicq_key' ) );
+			wp_remote_request( sprintf( "https://afosto.app/api/storage/quicq/proxies/%s/wordpress/upgrade", $siteKey ), [
+					"method"  => "PUT",
+					"headers" => [
+						"content-type" => "application/vnd.afosto.api.v1+json"
+					],
+					"body"    => json_encode( [
+						"data" => [
+							"site_key"          => $siteKey,
+							"version"           => $plugin_version,
+							"site_url"          => site_url(),
+							"wordpress_version" => $wp_version,
+						]
+					] )
+				]
+			);
+			delete_transient( 'wp_quicq_updated' );
+		}
+	}
+	quicq_trigger_update();
+}
 
 if ( isset( $_GET['page'] ) ) {
 	if ( $_GET['page'] == 'quicq_adminpage' ) {
@@ -80,7 +141,7 @@ if ( ! function_exists( ' quicq_active' ) ) {
  */
 if ( ! function_exists( ' quicq_activated' ) ) {
 	function quicq_activated( $content ) {
-		$content = preg_replace_callback( '/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}(\.[a-zA-Z0-9()]{1,6}|:\d+)\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpe?g|webp)/', 'quicq_rewrite_url', $content );
+		$content = preg_replace_callback( '/(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}(\.[a-zA-Z0-9()]{1,6}|:\d+)\b([-a-zA-Z0-9()@:%_+.~#?&\/\/=]*))(.png|.jpe?g|webp|.svg)/', 'quicq_rewrite_url', $content );
 
 		return $content;
 	}
