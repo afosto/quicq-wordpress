@@ -264,7 +264,7 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 
 == Changelog ==
 
-= 1.4.3 (2022-06-28) =
+= 1.4.4 (2022-07-13) =
 
 - Enhance: updated the path Quicq proxy uses to /wp-content instead of  /wp-content/uploads
 
