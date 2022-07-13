@@ -3,7 +3,7 @@
  * Plugin Name:    Quicq for WebP images
  * Plugin URI:     https://afosto.com/apps/quicq/
  * Description:    Quicq integration for Wordpress.
- * Version:        1.4.3
+ * Version:        1.4.4
  * Author:        Afosto
  * Author URI:    https://afosto.com
  * Domain Path:   /languages
@@ -42,15 +42,15 @@ register_uninstall_hook( __FILE__, 'quicq_uninstall' );
 register_deactivation_hook( __FILE__, 'quicq_deactivate' );
 register_activation_hook( __FILE__, 'quicq_activate' );
 
-add_action( 'upgrader_process_complete', 'quicq_upgrader_process_complete', 10, 2 );
 /**
- * Upgrader process complete.
- *
- * @param \WP_Upgrader $upgrader_object
- * @param array $hook_extra
- *
- * @see \WP_Upgrader::run() (wp-admin/includes/class-wp-upgrader.php)
+ * hook that handles updates
+ * @since 1.4.3
  */
+add_action( 'upgrader_process_complete', 'quicq_upgrader_process_complete', 10, 2 );
+
+
+
+
 if ( ! function_exists( ' quicq_upgrader_process_complete' ) ) {
 	function quicq_upgrader_process_complete( $upgrader_object, $options ) {
 		$current_plugin_path_name = plugin_basename( __FILE__ );
@@ -68,8 +68,7 @@ if ( ! function_exists( ' quicq_upgrader_process_complete' ) ) {
 
 
 /**
- * Show a notice to anyone who has just updated this plugin
- * This notice shouldn't display to anyone who has just installed the plugin for the first time
+ * notifies Quicq about the version update so it can match the plugin version
  */
 if ( ! function_exists( ' quicq_trigger_update' ) ) {
 	function quicq_trigger_update() {
@@ -156,7 +155,7 @@ if ( ! function_exists( ' quicq_rewrite_url' ) ) {
 		$quicq_url = get_option( 'quicq_key' );
 		foreach ( $images as &$imageUrl ) {
 			//rewrite all images that originate from the wp-content folder
-			$imageUrl = str_replace( site_url() . "/wp-content/uploads", $quicq_url, $imageUrl );
+			$imageUrl = str_replace( site_url() . "/wp-content", $quicq_url, $imageUrl );
 		}
 
 		return $images[0];

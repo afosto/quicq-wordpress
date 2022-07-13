@@ -4,7 +4,7 @@ Contributors: kyanoapp
 Tags: convert webp, convert AVIF, image optimization, optimize images, resize images, compress images, webp, AVIF, image optimizer, image compress, image optimize, webp format, AVIF format
 Requires at least: 5.3
 Tested up to: 5.9.0
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -263,6 +263,10 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 [youtube https://www.youtube.com/watch?v=Ml13g67_J0Q]
 
 == Changelog ==
+
+= 1.4.4 (2022-07-13) =
+
+- Enhance: updated the path Quicq proxy uses to /wp-content instead of  /wp-content/uploads
 
 = 1.4.3 (2022-06-28) =
 
