@@ -3,8 +3,8 @@ Plugin Name: Convert WebP & AVIF | Quicq | Best image optimizer and compression 
 Contributors: kyanoapp
 Tags: convert webp, convert AVIF, image optimization, optimize images, resize images, compress images, webp, AVIF, image optimizer, image compress, image optimize, webp format, AVIF format
 Requires at least: 5.3
-Tested up to: 5.9.0
-Stable tag: 1.5.0
+Tested up to: 6.0.1
+Stable tag: 1.6.0
 Requires PHP: 5.6.20
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -263,6 +263,13 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 [youtube https://www.youtube.com/watch?v=Ml13g67_J0Q]
 
 == Changelog ==
+
+= 1.6.0 (2022-07-26) =
+
+- Fix: Fixed a regression bug that occurred when a previous version lower then 1.4.0 was installed
+- Enhance: improved the parsing of images
+- Enhance: improved the update process of a quicq proxy
+
 
 = 1.5.0 (2022-07-13) =
 
