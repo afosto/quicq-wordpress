@@ -264,7 +264,7 @@ The Free forever plan provides 25gb and 100.000 optimizations per month. Thus, a
 
 == Changelog ==
 
-= 1.6.0 (2022-07-26) =
+= 1.6.0 (2022-08-01) =
 
 - Fix: Fixed a regression bug that occurred when a previous version lower then 1.4.0 was installed
 - Enhance: improved the parsing of images
