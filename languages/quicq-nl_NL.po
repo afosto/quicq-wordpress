@@ -3,117 +3,136 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quicq for WebP images 1.2\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/quicq-"
-"wordpress\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/quicq-wordpress\n"
 "POT-Creation-Date: 2022-01-19T11:50:58+01:00\n"
-"PO-Revision-Date: 2022-01-19 12:00+0100\n"
+"PO-Revision-Date: 2023-01-04 06:44+0000\n"
 "Last-Translator: \n"
-"Language-Team: \n"
+"Language-Team: Dutch\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Domain: quicq\n"
 
-#. Plugin Name of the plugin
-msgid "Quicq for WebP images"
-msgstr "Quicq voor WebP afbeeldingen"
-
-#. Plugin URI of the plugin
-msgid "https://quicq.io/"
-msgstr "https://quicq.io"
-
-#. Description of the plugin
-msgid "Quicq integration for Wordpress."
-msgstr "Quicq integratie voor Wordpress."
+#: templates/template-uninstallation-warning.php:9
+msgid ""
+"<strong>WP Quicq Afosto Integration</strong> PLease make sure the Quicq CDN "
+"is deleted in <a href=\"https://afosto.app/auth/login\" target=\"_blank\">"
+"Afosto</a>. Otherwise crawlers that crawl historical images might incur "
+"traffic."
+msgstr ""
 
 #. Author of the plugin
 msgid "Afosto"
 msgstr "Afosto"
 
+#: templates/template-settings.php:109
+msgid "Analytics"
+msgstr ""
+
+#: templates/template-settings.php:22
+msgid "Boost your website"
+msgstr "Boost jouw website"
+
+#: templates/template-settings.php:121
+msgid ""
+"Click on start now to enable Quicq on your website and start optimize all of "
+"your images through our lightning-fast CDN. Your images will be optimized "
+"for all visitors and devices."
+msgstr ""
+
+#: templates/template-settings.php:23
+msgid "Compress images and improve your pagespeed with Quicq."
+msgstr "Optimaliseer afbeeldingen en verbeter je pagespeed met Quicq."
+
+#: templates/template-settings.php:33
+msgid "Connect or create your Afosto account to optimize all of your images."
+msgstr ""
+
+#: templates/template-settings.php:32 templates/template-settings.php:45
+msgid "Connect to Afosto"
+msgstr ""
+
+#: templates/template-settings.php:95
+msgid "Connect to Afosto en install your first CDN"
+msgstr ""
+
+#: templates/template-settings.php:44
+msgid "Disconnect"
+msgstr ""
+
+#: templates/template-settings.php:15
+msgid "Documentation"
+msgstr ""
+
+#: templates/template-settings.php:54
+msgid "Enable Quicq on your website"
+msgstr ""
+
+#: templates/template-settings.php:55
+msgid "Enable Quicq to serve all of your images via our lightning-fast CDN."
+msgstr ""
+
 #. Author URI of the plugin
 msgid "https://afosto.com"
 msgstr "https://afosto.com"
 
-#: quicq.php:101 quicq.php:102
-msgid "Quicq"
-msgstr "Quicq"
-
-#: quicq.php:156
-msgid "Boost your website"
-msgstr "Boost jouw website"
-
-#: quicq.php:157
-msgid "Compress images and improve your pagespeed with Quicq."
-msgstr "Optimaliseer afbeeldingen en verbeter je pagespeed met Quicq."
-
-#: quicq.php:169
-msgid "Join Quicq"
-msgstr "Meld je aan bij Quicq"
-
-#: quicq.php:170
-msgid "Create your free account"
-msgstr "Maak een gratis account aan"
-
-#: quicq.php:174
-msgid "Sign up"
-msgstr "Registreren"
-
-#: quicq.php:176
-msgid "Log in"
-msgstr "Inloggen"
-
-#: quicq.php:191
-msgid "About Quicq"
-msgstr "Over Quicq"
-
-#: quicq.php:192
-msgid ""
-"Speed ​​up the loading time of your website or webshop by up to 80% with "
-"Quicq. Improve pagespeed, outperform competitors and boost your SEO."
+#. URI of the plugin
+msgid "https://afosto.com/apps/quicq/"
 msgstr ""
-"Versnel de laadtijd van je website of webshop tot wel 80% met Quicq. "
-"Verbeter de pagespeed, presteer beter dan je concurrenten en geef je SEO "
-"een boost."
 
-#: quicq.php:203
-msgid "How to setup Quicq?"
-msgstr "Hoe stel je Quicq in?"
+#: templates/template-settings.php:110
+msgid "My Company"
+msgstr ""
 
-#: quicq.php:204
-msgid "Go to docs"
-msgstr "Ga naar documentatie"
+#: templates/template-settings.php:88
+msgid "Non-Operational"
+msgstr ""
 
-#: quicq.php:212
-msgid "Contribution"
-msgstr "Samenwerking"
+#: templates/template-settings.php:81 templates/template-settings.php:86
+msgid "Operational"
+msgstr ""
 
-#: quicq.php:213
-msgid "This plugin was made in collaboration with"
-msgstr "Deze plugin werd gemaakt in samenwerking met"
+#: classes/class-admin-menu.php:20 classes/class-admin-menu.php:21
+msgid "Quicq Afosto Integration"
+msgstr ""
 
-#: quicq.php:215
-msgid "Kyano.app"
-msgstr "Kyano.app"
+#. Name of the plugin
+msgid "Quicq for WebP images"
+msgstr "Quicq voor WebP afbeeldingen"
 
-#: quicq.php:231
-msgid "URL Key:"
+#. Description of the plugin
+msgid "Quicq integration for Wordpress."
+msgstr "Quicq integratie voor Wordpress."
+
+#: templates/template-settings.php:125
+msgid "start now"
+msgstr ""
+
+#: templates/template-settings.php:120
+msgid "Start optimizing your images"
+msgstr ""
+
+#: templates/template-settings.php:111
+msgid "Support"
+msgstr ""
+
+#: templates/template-settings.php:77
+msgid "URL"
+msgstr ""
+
+#: templates/template-settings.php:73
+#, fuzzy
+#| msgid "URL Key:"
+msgid "URL key"
 msgstr "URL sleutel:"
 
-#: quicq.php:232
-msgid "Example:"
-msgstr "Voorbeeld:"
+#: templates/template-settings.php:104
+msgid "Useful links"
+msgstr ""
 
-#: quicq.php:233
-msgid "quicq"
-msgstr "quicq"
-
-#: quicq.php:265
-msgid "Activate Quicq"
-msgstr "Activeer Quicq"
-
-#: quicq.php:266
-msgid "Activate quicq on your website."
-msgstr "Activeer Quicq op jouw website."
+#: templates/template-settings.php:68
+msgid "Your CDN"
+msgstr ""
